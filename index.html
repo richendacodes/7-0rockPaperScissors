@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4>ROUND</h4>
@@ -49,7 +49,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <a class="btn btn-default btn-success btn-block btn-lg">Play Game</a>
         <div class="row">
           <div class="col-md-4">
@@ -76,16 +76,54 @@
           </div>
         </div>
       </div>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4>Leaderboard</h4> 
+          </div>
+          <div class="panel-body">
+            <div class="example-base example-leaderboard l-demo-container">
+              <table id="leaderboardTable" class="hundred">
+                <tr>
+                  <th class="fifty">Player</th>
+                  <th class="fifty">Score</th>
+                </tr>
+              </table>
+              <footer>
+                
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
 
+  <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">You won! Did you get a high score?</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <input class="example-leaderboard-name form-control" type="text" id="nameInput" placeholder="Enter a name"><br>
+            <input class="example-leaderboard-score form-control" type="text" id="scoreInput" placeholder="Record your score...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p>Hit enter to submit your score</p>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
-
-  
-
-
+  <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/bootbox.min.js"></script>

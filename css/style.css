@@ -8,7 +8,7 @@ body {
   margin-top: -5px;
 }
 
-.panel-heading h4 {
+.panel-heading h4, .modal-title {
   font-family: Nova Mono;
 }
 
@@ -44,4 +44,11 @@ body {
 #msg {
   text-align: center;
   font-size: 18px;
+}
+
+.hundred {
+  width: 100%;
+}
+.fifty {
+  width: 50%;
 }
