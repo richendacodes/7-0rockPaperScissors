@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Logic</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/united/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic,700,700italic|Nova+Mono' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/animations.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"> ROCK <i class="fa fa-hand-rock-o"></i> |  PAPER <i class="fa fa-hand-paper-o"></i> | SCISSORS <i class="fa fa-hand-scissors-o"></i> | <i class="fa fa-plus"></i> <i class="fa fa-plus"></i></a>
+            </div>
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>ROUND</h4>
+          </div>
+          <div class="panel-body">
+            <p id="rounds">0</p>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>SCORE</h4>
+          </div>
+          <div class="panel-body">
+            <p id="user-score">User: 0</p>
+            <p id="computer-score">Computer: 0</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <a class="btn btn-default btn-success btn-block btn-lg">Play Game</a>
+        <div class="row">
+          <div class="col-md-4">
+            <a class="btn btn-default btn-primary btn-hide control" data-value="rock"><i class="fa fa-hand-rock-o fa-5x"></i><br>ROCK</a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-default btn-primary btn-hide control" data-value="paper"><i class="fa fa-hand-paper-o fa-5x"></i><br>paper</a>
+          </div>
+          <div class="col-md-4">
+            <a class="btn btn-default btn-primary btn-hide control" data-value="scissors"><i class="fa fa-hand-scissors-o fa-4x"></i><br>Scissors</a>
+          </div>
+        </div>
+        <div class="row downplay">
+          <div class="col-md-6">
+            <a class="btn btn-default btn-primary btn-hide control" data-value="lizard"><i class="fa fa-hand-lizard-o fa-4x"></i><br>Lizard</a>
+          </div>
+          <div class="col-md-6">
+            <a class="btn btn-default btn-primary btn-hide control" data-value="spock"><i class="fa fa-hand-spock-o fa-4x"></i><br>Spock</a>
+          </div>
+        </div>
+        <div class="row downplay">
+          <div class="col-md-12">
+            <p id="msg"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/bootbox.min.js"></script>
+  <script type="text/javascript" src="js/game.js"></script>
+
+</body>
+</html>
