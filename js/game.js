@@ -1,33 +1,5 @@
 $( document ).ready(function() {
 
-
-  // $("#myModal").on("show", function() {    // wire up the OK button to dismiss the modal when shown
-  //       $("#myModal a.btn").on("click", function(e) {
-  //           console.log("button pressed");   // just as an example...
-  //           $("#myModal").modal('hide');     // dismiss the dialog
-  //       });
-  //   });
-  //   $("#myModal").on("hide", function() {    // remove the event listeners when the dialog is dismissed
-  //       $("#myModal a.btn").off("click");
-  //   });
-    
-  //   $("#myModal").on("hidden", function() {  // remove the actual elements from the DOM when fully hidden
-  //       $("#myModal").remove();
-  //   });
-    
-  //   $("#myModal").modal({                    // wire up the actual modal functionality and show the dialog
-  //     "backdrop"  : "static",
-  //     "keyboard"  : true,
-  //     "show"      : true                     // ensure the modal is shown immediately
-  //   });
-
-
-
-
-
-
-
-
   var playGame = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
   var userScore = 0;
   var computerScore = 0;
@@ -50,248 +22,119 @@ $( document ).ready(function() {
       var choice = $(this).data('value');
 
       if (choice == 'rock' && randomString == 'rock'){
-        $(this).addClass('hatch');
         $('#msg').html('A mutual \'rock\'. No points awarded.');
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        tie();
       } else if (choice == 'rock' && randomString == 'scissors'){
-        $(this).addClass('hatch');
         $('#msg').html('You smash their scissors with your rock!');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        userWin();
       } else if (choice == 'rock' && randomString == 'paper'){
-        $(this).addClass('hatch');
         $('#msg').html('Their paper covers your rock (lame)');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        computerWin();
       } else if (choice == 'rock' && randomString == 'lizard'){
-        $(this).addClass('hatch');
         $('#msg').html('You smash the lizard with your rock! (ew)');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        userWin();
       } else if (choice == 'rock' && randomString == 'spock'){
-        $(this).addClass('hatch');
         $('#msg').html('Spock is not impressed by your rock.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        computerWin();
 
       } else if (choice == 'paper' && randomString == 'paper'){
-        $(this).addClass('hatch');
         $('#msg').html('A mutual \'paper\'. No points awarded.');
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        tie();
       } else if (choice == 'paper' && randomString == 'rock'){
-        $(this).addClass('hatch');
         $('#msg').html('Your paper covers their rock! Victory!');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        userWin();
       } else if (choice == 'paper' && randomString == 'scissors'){
-        $(this).addClass('hatch');
         $('#msg').html('Their scissors cut your paper.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        computerWin();
       } else if (choice == 'paper' && randomString == 'lizard'){
-        $(this).addClass('hatch');
         $('#msg').html('The lizard snaps up your paper. Oops.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        computerWin();
       } else if (choice == 'paper' && randomString == 'spock'){
-        $(this).addClass('hatch');
         $('#msg').html('Spock is distracted reading your paper. Score!');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        userWin();
 
       } else if (choice == 'scissors' && randomString == 'scissors'){
-        $(this).addClass('hatch');
-        $('#msg').html('A mutual \'scissors\'. No points awarded.');
-        rounds++;
-        $('#rounds').html(rounds); 
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-      
+        $('#msg').html('Scissors can\'t hurt scissors. No points awarded.');
+        tie();
       } else if (choice == 'scissors' && randomString == 'paper'){
-        $(this).addClass('hatch');
         $('#msg').html('You cut up their paper with your scissors!');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        userWin();
       } else if (choice == 'scissors' && randomString == 'rock'){
-        $(this).addClass('hatch');
         $('#msg').html('Their rock smashes your scissors');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        computerWin();
       } else if (choice == 'scissors' && randomString == 'lizard'){
-        $(this).addClass('hatch');
         $('#msg').html('Their lizard is no match for your scissors.');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        userWin();
       } else if (choice == 'scissors' && randomString == 'spock'){
-        $(this).addClass('hatch');
         $('#msg').html('Spock uses your scissors to trim his eyebrows.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        computerWin();
       
       } else if (choice == 'lizard' && randomString == 'lizard'){
-        $(this).addClass('hatch');
-        $('#msg').html('A mutual \'lizard\'. No points awarded.');
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-  
+        $('#msg').html('Your lizard stares at their lizard. No points awarded.');
+        tie();
       } else if (choice == 'lizard' && randomString == 'paper'){
-        $(this).addClass('hatch');
         $('#msg').html('Your lizard chews up their paper.');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        userWin();
       } else if (choice == 'lizard' && randomString == 'rock'){
-        $(this).addClass('hatch');
         $('#msg').html('Their rock smashes your lizard. ...ew.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        computerWin();
       } else if (choice == 'lizard' && randomString == 'scissors'){
-        $(this).addClass('hatch');
         $('#msg').html('Their scissors... they do mean things to your lizard. Sorry.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        computerWin();
       } else if (choice == 'lizard' && randomString == 'spock'){
-        $(this).addClass('hatch');
         $('#msg').html('Your lizard poisons Spock!');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        userWin();
 
       } else if (choice == 'spock' && randomString == 'spock'){
-        $(this).addClass('hatch');
-        $('#msg').html('A mutual \'spock\'. No points awarded.');
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        $('#msg').html('Spock outspocks himself. No points awarded.');
+        tie();
       } else if (choice == 'spock' && randomString == 'paper'){
-        $(this).addClass('hatch');
         $('#msg').html('The paper is too interesting, your Spock is done for.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        computerWin();
       } else if (choice == 'spock' && randomString == 'rock'){
-        $(this).addClass('hatch');
         $('#msg').html('Spock vaporizes their rock.');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        userWin();
       } else if (choice == 'spock' && randomString == 'scissors'){
-        $(this).addClass('hatch');
         $('#msg').html('Spock smashes their scissors with his opposable thumbs.');
-        userScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
-
+        userWin();
       } else if (choice == 'spock' && randomString == 'lizard'){
-        $(this).addClass('hatch');
         $('#msg').html('Their lizard poisons Spock!');
-        computerScore++;
-        rounds++;
-        $('#rounds').html(rounds);
-        setTimeout(function() {
-          $('.btn-primary').removeClass('hatch slideDown');
-        }, 800);
+        computerWin();
 
       }
         $('#computer-score').html('Computer: '+ computerScore); 
         $('#user-score').html('User: '+ userScore); 
       scoreBoard();
     });
+  }
+
+  function computerWin() {
+    $(this).addClass('hatch');
+    computerScore++;
+    rounds++;
+    $('#rounds').html(rounds);
+    setTimeout(function() {
+      $('.btn-primary').removeClass('hatch slideDown');
+    }, 800);
+  }
+
+  function userWin() {
+    $(this).addClass('hatch');
+    userScore++;
+    rounds++;
+    $('#rounds').html(rounds);
+    setTimeout(function() {
+      $('.btn-primary').removeClass('hatch slideDown');
+    }, 800);
+  }
+
+  function tie() {
+    $(this).addClass('hatch');
+    rounds++;
+    $('#rounds').html(rounds);
+    setTimeout(function() {
+      $('.btn-primary').removeClass('hatch slideDown');
+    }, 800);
   }
 
   function scoreBoard() {
@@ -307,7 +150,7 @@ $( document ).ready(function() {
           rounds = 0;
           computerScore = 0;
           userScore = 0;
-        }, 1000);
+        }, 500);
 
       } else if (computerScore > userScore) {
         setTimeout(function() {
@@ -319,7 +162,7 @@ $( document ).ready(function() {
           rounds = 0;
           computerScore = 0;
           userScore = 0;
-        }, 1500);
+        }, 500);
       } else if (computerScore == userScore) {
         setTimeout(function() {
           $('#msg').empty();
@@ -330,7 +173,7 @@ $( document ).ready(function() {
           rounds = 0;
           computerScore = 0;
           userScore = 0;
-        }, 1500);
+        }, 500);
       };
       
     };
