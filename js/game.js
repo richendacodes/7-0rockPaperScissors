@@ -109,7 +109,7 @@ $( document ).ready(function() {
   }
 
   function computerWin() {
-    $(this).addClass('hatch');
+    
     computerScore++;
     rounds++;
     $('#rounds').html(rounds);
@@ -139,7 +139,6 @@ $( document ).ready(function() {
 
   function scoreBoard() {
     if (rounds > 4) {
-      $('.btn-primary').off();
       if (userScore > computerScore) {
         setTimeout(function() {
           $('#msg').empty();
