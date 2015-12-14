@@ -109,7 +109,7 @@ $( document ).ready(function() {
   }
 
   function computerWin() {
-    
+    $(this).addClass('hatch');
     computerScore++;
     rounds++;
     $('#rounds').html(rounds);
